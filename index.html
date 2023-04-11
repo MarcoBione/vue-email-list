@@ -25,7 +25,7 @@
 
             <!-- how many emails? -->
             <label for="num">Inserisci il numero di email che vuoi generare</label>
-            <input type="number" v-model="genNum" id="num">
+            <input type="number" v-model="genNum" id="num" @keyup.enter="getApis">
 
             <!-- generate email list -->
             <button class="btn btn-outline-primary" @click="getApis">Generate emails</button>
@@ -34,8 +34,8 @@
             <div class="texts">
 
                 <ul class="list-unstyled">
-                    <li>
-
+                    <li v-for="emails in emailList">
+                        {{emails}}
                     </li>
                 </ul>
             </div>

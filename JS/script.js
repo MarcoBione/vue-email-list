@@ -11,10 +11,24 @@ createApp({
     },
     methods: {
         getApis(){
-            axios.get(this.api).then((res) => {
-                console.log(this.genNum),
-                console.log(res.data.response);
-            })
+            //emailList reset
+            this.emailList=[''];
+            //cicle for create email + push
+            for(let i = 0; i < this.genNum; i++){
+
+                axios.get(this.api).then((res) => {
+
+                    //check correct load of user number
+                    //console.log(this.genNum),
+
+                    //push generated emails to array
+                    this.emailList.push(res.data.response)
+                })
+            }
+            this.renderList = [...this.emailList];
+            //check array of emails
+            //console.log(this.emaiList);
+            
         }
 
     }

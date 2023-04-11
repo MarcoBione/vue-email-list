@@ -15,23 +15,36 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <!-- vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <div id="app">
 
-        <div class="container text-center p-5 rounded-4 border border-1 bg-body-tertiary">
-
+        <!-- title -->
+        <h1 class="_mysubtitle fw-semibold container">Generatore di indirizzi Email</h1>
+        <hr>
+        <div class="container">
             <!-- how many emails? -->
-            <label for="num">Inserisci il numero di email che vuoi generare</label>
-            <input type="number" v-model="genNum" id="num" @keyup.enter="getApis">
+            <span class="m-0">Inserisci il numero di email che vuoi generare :</span>
+            <input type="number" v-model="genNum" id="num" @keyup.enter="getApis" required max="20" min="0" class="_myinput">
+        </div>
 
+        <div class="container">
             <!-- generate email list -->
-            <button class="btn btn-outline-primary" @click="getApis">Generate emails</button>
+            <button class="_mybtn" @click="getApis">Generate emails</button>
+        </div>
+
+        <div class="container py-3">
 
             <!-- displays list of emails -->
             <div class="texts">
+
+                <h2 v-if="this.emailList.length > 1" class="_mysubtitle">Le tue email:</h2>
 
                 <ul class="list-unstyled">
                     <li v-for="emails in emailList">
@@ -39,7 +52,11 @@
                     </li>
                 </ul>
             </div>
+
         </div>
+
+
+
 
     </div>
 

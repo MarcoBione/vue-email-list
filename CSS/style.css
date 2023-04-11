@@ -1,0 +1,45 @@
+/* ### FONT ### */
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* ### PALETTE ### */
+:root {
+    --jet: #323031ff;
+    --jet-2: #3d3b3cff;
+    --gray: #7f7979ff;
+    --silver: #c1bdb3ff;
+    --davys-gray: #5f5b6bff;
+}
+
+/* ### MAIN ### */
+#app{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--silver);
+}
+._mybtn{
+    background-color: var(--jet);
+    color: var(--silver);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px var(--jet-2);
+    transition: background-color 1s;
+}
+._mybtn:hover{
+    background-color: var(--silver);
+    color: var(--jet);
+    box-shadow: 1px 1px 3px transparent;
+    
+}
+
+._myinput{
+    background-color: var(--jet);
+    color: var(--silver);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px var(--jet-2);
+    margin-left: 1rem;
+}
+
+._mysubtitle{
+    color: var(--gray);
+}
